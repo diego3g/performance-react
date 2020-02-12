@@ -1,38 +1,87 @@
 .App {
-  text-align: center;
+  background: #f5f5f5;
+  padding: 30px 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.post-list {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.post-list > article {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.post-list > article > p {
+  line-height: 24px;
+  color: #333;
+}
+
+.post-list > article + article {
+  margin-top: 30px;
+}
+
+.comment-list {
+  border-top: 1px solid #f5f5f5;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.comment-list > strong {
+  color: #666;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.comment-list ul {
+  list-style: none;
+  padding: 0;
+  font-size: 12px;
+}
+
+.comment-list ul li {
+  background: #f5f5f5;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.comment-list ul li + li {
+  margin-top: 10px;
+}
+
+form {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+  background: #FFF;
+  border: 1px solid #ddd;
+  margin-bottom: 30px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+form input, form textarea {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+form button {
+  margin-top: 5px;
+  background: #7159c1;
+  font-weight: bold;
+  color: #FFF;
+  border: 0;
+  border-radius: 4px;
+  padding: 8px 16px;
 }
