@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import api from 'axios';
 import { uuid } from 'uuidv4';
 
@@ -16,7 +16,7 @@ export default function PostList() {
     })
   }, []);
 
-  function addNewPost(e) {
+  const addNewPost = useCallback((e) => {
     e.preventDefault();
 
     setPosts([{
@@ -28,12 +28,12 @@ export default function PostList() {
 
     setNewPostTitle('');
     setNewPostBody('');
-  }
+  }, [newPostBody, newPostTitle, posts]);
 
-  const postList = posts.map(post => ({
+  const postList = useMemo(() => posts.map(post => ({
     ...post,
     titleMin: post.title.length > 40 ? post.title.substr(0, 40).concat('...') : post.title,
-  }))
+  })), [posts])
 
   return (
     <>
